@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bootstrapper.Common
+namespace VievModel.Windows
 {
-    public interface IPathService
+    public interface IWindowViewModel
     {
-        string ApplicationFolder { get; }
+        void WindowClosing();
     }
 }

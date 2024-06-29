@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vievs.Windows
+namespace VievModel.Windows
 {
     public interface IWindow
     {
