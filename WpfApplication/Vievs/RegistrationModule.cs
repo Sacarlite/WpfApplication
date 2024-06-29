@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VievModel.Windows;
+using Vievs.Window;
 using Vievs.Windows.MainWindow;
 
 namespace Vievs
@@ -17,6 +19,8 @@ namespace Vievs
             builder.RegisterType<MainWindow>().As<IMainWindow>().InstancePerDependency();
             //TODO Зарегистрировать окна
             //Регистрация менеджеров
+            //Регистрация менеджера окон
+            builder.RegisterType<WindowManager>().As<IWindowManager>().InstancePerDependency();
             //TODO Зарегистрировать менеджер
         }
     }
