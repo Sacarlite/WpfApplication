@@ -22,6 +22,7 @@ namespace Vievs
             //Регистрация менеджера окон
             builder.RegisterType<WindowManager>().As<IWindowManager>().InstancePerDependency();
             //TODO Зарегистрировать менеджер
+            base.Load(builder);
         }
     }
 }

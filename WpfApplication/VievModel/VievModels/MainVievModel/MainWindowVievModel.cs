@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Domain.Factories;
 using Domain.Settings;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace VievModel.VievModels.MainVievModel
             _windowMementoWrapper = mainWindowMementoWrapper;
         }
 
-        public string Title => "OptKurs";
+        public string Title => "MainWindowTITLE";
 
         public override void WindowClosing()
         {
