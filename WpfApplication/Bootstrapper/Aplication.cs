@@ -15,11 +15,12 @@ namespace Bootstrapper
 {
     internal class Application : IApplication, IDisposable
     {
-      
+        private static readonly ILogger Logger = LogManager.GetLogger(nameof(Application));
         private readonly ILifetimeScope _applicationlifetimeScope;
 
         public Application(ILifetimeScope lifetimeScope)
         {
+            Logger.Info("Create lifetimeScope");
             _applicationlifetimeScope = lifetimeScope.BeginLifetimeScope(RegisterDependencies);
 
         }
@@ -40,6 +41,7 @@ namespace Bootstrapper
 
         public void Dispose()
         {
+            Logger.Info("Dispose Application");
             _applicationlifetimeScope.Dispose();
         }
 

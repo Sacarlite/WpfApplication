@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Bootstrapper.Common;
+using Bootstrapper.Logging;
 using Infrastructure.Common;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace Bootstrapper
         private void InitializeDependencies()
         {
             _container.Resolve<IPathServiceInitializer>().Initialize();
+            _container.Resolve<ILogManagerInitializer>();
 
         }
 
@@ -30,11 +32,18 @@ namespace Bootstrapper
         {
             containerBuilder.RegisterType<Application>().As<IApplication>().SingleInstance();
             containerBuilder.RegisterType<PathService>().As<IPathService>().As<IPathServiceInitializer>().SingleInstance();
-           }
+            containerBuilder.RegisterType<UnhendledExeptionHandler>().As<IUnhendledExeptionHandler>().SingleInstance();
+            containerBuilder.RegisterType<LogManagerInitializer>().As<ILogManagerInitializer>().SingleInstance();
+        }
 
         public IApplication CreateApplication()
         {
             return _container.Resolve<IApplication>();
+        }
+        public IUnhendledExeptionHandler CreateUnhendledExeptionHandler()
+        {
+            return
+            _container.Resolve<IUnhendledExeptionHandler>();
         }
         public void Dispose()
         {
