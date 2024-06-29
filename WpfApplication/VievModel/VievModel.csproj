@@ -13,4 +13,8 @@
     <PackageReference Include="NLog" Version="5.3.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="VievModels\MainVievModel\" />
+  </ItemGroup>
+
 </Project>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Vievs.Windows.MainWindow;
 
 namespace Vievs
 {
@@ -12,6 +13,8 @@ namespace Vievs
         protected override void Load(ContainerBuilder builder)
         {
             //Регистрация окон
+            //Регистрация главного окна
+            builder.RegisterType<MainWindow>().As<IMainWindow>().InstancePerDependency();
             //TODO Зарегистрировать окна
             //Регистрация менеджеров
             //TODO Зарегистрировать менеджер
