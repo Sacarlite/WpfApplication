@@ -14,4 +14,8 @@
     <PackageReference Include="NLog" Version="5.3.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Bootstrapper\Bootstrapper.csproj" />
+  </ItemGroup>
+
 </Project>

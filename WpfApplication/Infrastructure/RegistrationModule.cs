@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Domain.Settings;
+using Domain.Version;
 using Infrastructure.Settings.WindowWrappers;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ namespace Infrastructure
         {
             //Регистрация Мемент
             builder.RegisterType<MainWindowMementoWrapper>().As<IMainWindowMementoWrapper>().As<IWindowMementoWrapperInitializer>().SingleInstance();
+            //Регистрация сервисов
+            builder.RegisterType<AplicationVersionProvider>().As<IAplicationVersionProvider>().SingleInstance();
             base.Load(builder);
         }
     }

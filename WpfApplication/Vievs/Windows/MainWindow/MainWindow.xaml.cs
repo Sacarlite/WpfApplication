@@ -18,7 +18,7 @@ namespace Vievs.Windows.MainWindow
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window, IMainWindow
+    public partial class MainWindow : System.Windows.Window, IMainWindow
     {
         public MainWindow(IMainVievModel mainVievModel)
         {
